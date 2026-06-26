@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'corsheaders',
     'users',
     'listings',
@@ -137,15 +138,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 配置自定义用户模型
 AUTH_USER_MODEL = 'users.User'
 
-
 # 配置CORS允许所有来源的请求
 CORS_ORIGIN_ALLOW_ALL = True
 
-# 生产环境下，根据实际情况配置允许的来源
-# CORS_ALLOWED_ORIGINS = [
-#     
+# 生产环境下记得配置允许访问的前端
+# CORS_ALLOW_ORIGINS = [
+#     'http://localhost:3000',
 # ]
 
-# 告诉django使用自定义用户模型
-AUTH_USER_MODEL = 'users.User'
+## DRF 配置
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+
 

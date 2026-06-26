@@ -13,7 +13,7 @@ class User(AbstractUser):
         ('other', '其他'),
     )
 
-    avatar = models.ImageField(upload_to='avatar/', blank=True, null=True, verbose_name='头像')
+    avatar = models.ImageField(upload_to='avatar/', blank=True, null=True, verbose_name='头像',default='avatar/default_avatar.png')
     phone = models.CharField(
         max_length=11,
         verbose_name='手机号',
@@ -24,7 +24,8 @@ class User(AbstractUser):
                 code='invalid_phone'
             )
         ],
-        blank=True,
+        blank=False,
+        null=False,
         help_text='请输入11位手机号'
     )
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='male', verbose_name='性别')
