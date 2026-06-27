@@ -66,3 +66,6 @@ my_vue_app/dist/
 
 # 向量库
 chroma_db/
+
+# RAG 知识文档（本地构建，不入库）
+rag_docs/
