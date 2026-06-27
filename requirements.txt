@@ -1,0 +1,19 @@
+django>=6.0
+djangorestframework
+django-cors-headers
+djangorestframework-simplejwt
+mysqlclient
+requests
+beautifulsoup4
+
+# ── AI / LangGraph ─────────────────────
+langgraph>=0.4.0
+langchain>=0.3.0
+langchain-openai
+langchain-community
+langchain-text-splitters
+chromadb
+sentence-transformers
+
+# ── 工具 ──────────────────────────────
+python-dotenv
